@@ -1,0 +1,29 @@
+# ============================== Filebeat inputs ===============================
+
+filebeat.inputs:
+
+# filestream is an input for collecting log messages from files.
+- type: filestream
+
+  # Unique ID among all inputs, an ID is required.
+  id: bsides2024
+
+  # Change to true to enable this input configuration.
+  enabled: true
+  # Paths that should be crawled and fetched. Glob based paths.
+  paths:
+    - cisco_asa_traffic.log
+    - palo_alto_traffic.log
+    - fortigate_traffic.log
+
+# ================================== Outputs ===================================
+
+# ------------------------------ Graylog Output -------------------------------
+output.logstash:
+  # The Graylog hosts
+  hosts: ["127.0.0.1:5044"]
+
+# ================================= Processors =================================
+processors:
+  - drop_fields:
+      fields: ["agent", "input", "host", "ecs" ]
