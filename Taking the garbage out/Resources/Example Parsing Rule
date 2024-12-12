@@ -2,6 +2,6 @@ rule "Parse Cisco ASA 302014"
 when
   starts_with(to_string($message.message), ("%ASA"))
 then
-  let test = regex("", to_string($message.message), ["messageType", "message", "connectionID", "soure_ip", "source_port", "destination_ip", "destination_port", "connection_duration", "bytes"]);
+  let test = regex("", to_string($message.message), ["messageType", "message", "connectionID", "source_ip", "source_port", "destination_ip", "destination_port", "connection_duration", "bytes"]);
   set_fields(test);
 end
