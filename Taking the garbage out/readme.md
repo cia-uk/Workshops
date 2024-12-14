@@ -3,7 +3,7 @@
 This contains the following files:
 - docker-compose file to stand up Graylog
 - filebeat.yml file for filebeat to ingest sample logs
-- sample logs for:
+- Sample logs:
     - Cisco ASA Traffic logs
     - Fortigate Traffic Logs
     - Palo Alto Traffic Logs
@@ -17,7 +17,7 @@ To complete this workshop the attendee should have the following software, note 
 
 ## Quickstart:
 
-Downlaod the files to your working directory.
+Download the files to your working directory.
 
 1. Stand up the docker containers using - `docker-compose -p bsides -f bsides.yml up -d` this will start the containers in a project called bsides
 2. Check you can login to the Graylog web interface at http://127.0.0.1:9000 with the user and password `admin:@Grayl0g123`
